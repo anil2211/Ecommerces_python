@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paytm paytm</title>
+</head>
+<body>
+<h1>Redirect to merchant</h1>
+<h1>do no refresh youor page</h1>
+<form action="https://securegw-stage.paytm.in/order/process" method="post" name="paytm">
+    {% for key,value in params_dict.items %}
+   <input type="hidden" name="{{key}}" value="{{value}}">
+    {% endfor %}
+
+</form>
+</body>
+
+<script>
+
+    document.paytm.submit()
+</script>
+</html>

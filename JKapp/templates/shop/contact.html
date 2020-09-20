@@ -1,0 +1,39 @@
+{% extends "shop/basic.html" %}
+
+{% block title %}contact {% endblock title %}
+{% block body %}
+
+<div class="container my-3
+">
+    <h3>Contact Us </h3>
+    <form action="/JKapp/contact" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Enter Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Enter Your Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter Phone</label>
+            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your Contact">
+        </div>
+
+        <div class="form-group">
+            <label for="desc">How May We Help You....</label>
+            <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+<script>
+{% if thank %}
+alert('Thanks for contact us,we will get back you soon...');
+document.location = "/JKapp/contact";
+{% endif %}
+</script>
+{% endblock  %}
